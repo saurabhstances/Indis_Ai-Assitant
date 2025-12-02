@@ -44,8 +44,6 @@ def find_and_open(filename):
 # --- 1. CONFIGURATION ---
 load_dotenv()
 API_KEY = os.getenv("GOOGLE_API_KEY")
-if not API_KEY:
-    API_KEY = "AIzaSyDNOFJRsvGx_InqKTJzhk7S1phiRItqlHw" # Backup Key
 
 genai.configure(api_key=API_KEY)
 
@@ -186,4 +184,5 @@ if __name__ == "__main__":
                     speak(response.text, lang='en')
             except Exception as e:
                 print(e)
+
                 speak("Connection Error.")
